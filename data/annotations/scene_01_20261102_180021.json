@@ -1,0 +1,11 @@
+{
+  "scene_id": "scene_01_20261102_180021",
+  "distance_source": "visual estimate (ordering only, not measured); replace with tape-measured values",
+  "regions": [
+    {"name": "counter_front", "bbox": [450, 1400, 750, 1550], "distance_m": 0.25, "type": "textureless"},
+    {"name": "can_front", "bbox": [570, 800, 670, 1100], "distance_m": 0.45, "type": "textured"},
+    {"name": "bucket", "bbox": [330, 880, 520, 1100], "distance_m": 0.45, "type": "textureless", "note": "same estimate as can: order between them unknown by eye, pair skipped"},
+    {"name": "rack_middle_shelf", "bbox": [717, 350, 983, 500], "distance_m": 0.70, "type": "textured"},
+    {"name": "back_microwave", "bbox": [883, 558, 1133, 675], "distance_m": 1.50, "type": "textured"}
+  ]
+}

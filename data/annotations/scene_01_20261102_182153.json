@@ -1,0 +1,10 @@
+{
+  "scene_id": "scene_01_20261102_182153",
+  "distance_source": "visual estimate (ordering only, not measured); replace with tape-measured values",
+  "regions": [
+    {"name": "can_near", "bbox": [60, 300, 330, 1300], "distance_m": 0.08, "type": "textured", "note": "closer than minimum focus distance; never sharp"},
+    {"name": "thermometer_label", "bbox": [540, 620, 760, 820], "distance_m": 0.20, "type": "textured"},
+    {"name": "pink_box", "bbox": [470, 200, 660, 450], "distance_m": 0.35, "type": "textured"},
+    {"name": "back_shelf", "bbox": [850, 240, 1150, 370], "distance_m": 0.90, "type": "textured"}
+  ]
+}
