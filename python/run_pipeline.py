@@ -109,6 +109,7 @@ def main() -> None:
     c_cfg = cfg["confidence"]
     conf = conf_mod.optical_confidence(sharp, c_cfg["measure"], c_cfg["texture_gate"], c_cfg["gate_low"], c_cfg["gate_high"])
     timings["optical"] = tick() - t
+    log.info("optical depth and confidence done")
 
     # --- neural depth ----------------------------------------------------------
     t = tick()
@@ -124,6 +125,7 @@ def main() -> None:
 
         raw, neural_info = neural_depth.predict(reference, args.model or cfg["neural"]["model"])
     timings["neural"] = tick() - t
+    log.info("neural depth done")
 
     # --- alignment -----------------------------------------------------------
     a_cfg = cfg["alignment"]
@@ -143,7 +145,8 @@ def main() -> None:
 
     # --- outputs -------------------------------------------------------------
     files = {"B1 optical": "optical_depth", "B2 neural": "neural_depth", "B3 fixed fusion": "fixed_fusion", "Confidence fusion": "confidence_fusion"}
-    vmin, vmax = float(lens.min()), float(lens.max())
+    # Same shared range as the comparison figure, so every depth PNG uses comparable colours.
+    vmin, vmax = (float(v) for v in np.percentile(np.concatenate([d.ravel() for d in maps.values()]), [1, 99]))
     for name, d in maps.items():
         np.save(out / f"{files[name]}.npy", d)
         visualize.save_depth_png(out / f"{files[name]}.png", d, vmin, vmax)

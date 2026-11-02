@@ -58,6 +58,17 @@ Outputs: `reference_rgb.png`, `reference_full.png`, `optical_depth.{npy,png}`,
 If `data/annotations/<scene_id>.json` exists, `metrics.json` also includes pairwise
 depth-ordering accuracy for every method (format in `python/evaluate.py`).
 
+## Live demo (presentations)
+
+Double-click `demo.command` in Finder (or run `python python/demo.py`). It opens a full-screen
+page at http://localhost:8765 and watches `~/Downloads`. In the app, open a capture and
+**Share capture (.zip) > AirDrop** to the Mac: the page plays the focus sweep while the pipeline
+runs (about 15-20 s), then shows photo, depth from focus, neural depth and confidence fusion.
+
+Keys: left/right arrows switch between processed scenes (the fallback if AirDrop fails),
+`C` toggles the confidence map, `F` toggles full screen. The launcher sets `HF_HUB_OFFLINE=1`,
+so the model must have been downloaded once beforehand (any normal pipeline run does this).
+
 ## Conventions
 
 - Depth maps use **larger = farther** throughout.

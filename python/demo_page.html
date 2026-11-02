@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FocusDepth</title>
+<style>
+  :root {
+    --bg: #0d0f12; --panel: #161a20; --line: #262c35; --text: #e8ebef; --muted: #8b94a1;
+    --accent: #f5b03a; --ok: #4cc38a; --err: #ef6b5b;
+    --turbo: linear-gradient(90deg, #7a0403, #ca2a04, #f66b19, #faba39, #c8ef34, #72fe5e, #1ae4b6, #36aaf9, #4662d7, #30123b);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+    font: 16px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; }
+  body { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; overflow: hidden; }
+
+  header { display: flex; align-items: baseline; gap: 18px; padding: 18px 28px 10px; }
+  header h1 { margin: 0; font-size: 26px; letter-spacing: -0.01em; }
+  header .sub { color: var(--muted); font-size: 15px; }
+  header .scene { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px;
+    background: var(--panel); border: 1px solid var(--line); font-size: 14px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+  .pill.processing .dot { background: var(--accent); animation: pulse 1s infinite; }
+  .pill.done .dot { background: var(--ok); }
+  .pill.error .dot { background: var(--err); }
+  @keyframes pulse { 50% { opacity: .3; } }
+
+  main { min-height: 0; padding: 8px 28px; }
+  .view { display: none; height: 100%; }
+  .view.on { display: grid; }
+
+  /* waiting */
+  #waiting { place-items: center; text-align: center; }
+  #waiting .big { font-size: 40px; font-weight: 600; margin-bottom: 10px; }
+  #waiting .hint { color: var(--muted); font-size: 18px; }
+  .phone { width: 70px; height: 120px; border: 3px solid var(--muted); border-radius: 16px; margin: 0 auto 28px;
+    position: relative; animation: bob 2.4s ease-in-out infinite; }
+  .phone::after { content: ""; position: absolute; left: 50%; bottom: 8px; width: 18px; height: 3px; margin-left: -9px;
+    background: var(--muted); border-radius: 2px; }
+  @keyframes bob { 50% { transform: translateY(-10px); } }
+
+  /* processing */
+  #processing { grid-template-columns: minmax(0, 1fr) 420px; gap: 36px; align-items: center; }
+  .sweep { height: 100%; min-height: 0; display: grid; grid-template-rows: 1fr auto; gap: 12px; justify-items: center; }
+  .sweep img { max-height: 100%; max-width: 100%; min-height: 0; object-fit: contain; border-radius: 10px; }
+  .lensbar { width: min(520px, 90%); }
+  .lensbar .track { height: 6px; background: var(--line); border-radius: 3px; position: relative; }
+  .lensbar .knob { position: absolute; top: -5px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%;
+    background: var(--accent); transition: left .25s; }
+  .lensbar .labels { display: flex; justify-content: space-between; color: var(--muted); font-size: 13px; margin-top: 8px; }
+  .stages h2 { margin: 0 0 6px; font-size: 22px; }
+  .stages .elapsed { color: var(--muted); margin-bottom: 20px; font-variant-numeric: tabular-nums; }
+  .stages ol { list-style: none; padding: 0; margin: 0; }
+  .stages li { display: flex; align-items: center; gap: 14px; padding: 11px 0; color: var(--muted); font-size: 18px; }
+  .stages li .ic { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); flex: none; }
+  .stages li.active { color: var(--text); }
+  .stages li.active .ic { border-color: var(--accent); border-top-color: transparent; animation: spin .8s linear infinite; }
+  .stages li.done { color: var(--text); }
+  .stages li.done .ic { border-color: var(--ok); background: var(--ok); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .errbox { margin-top: 18px; padding: 12px; border: 1px solid var(--err); border-radius: 8px; color: var(--err);
+    white-space: pre-wrap; font: 12px/1.4 ui-monospace, Menlo, monospace; max-height: 30vh; overflow: auto; }
+
+  /* results */
+  #results { grid-template-rows: minmax(0, 1fr) auto; gap: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; min-height: 0; }
+  figure { margin: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 8px; min-height: 0; }
+  figure .t { font-size: 17px; font-weight: 600; }
+  figure .t small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; }
+  figure .img { min-height: 0; display: grid; place-items: center; background: var(--panel); border-radius: 10px; overflow: hidden; }
+  figure img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  figure.hero .img { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .bottom { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: 14px; flex-wrap: wrap; }
+  .legend { display: flex; align-items: center; gap: 10px; }
+  .legend .bar { width: 220px; height: 10px; border-radius: 5px; background: var(--turbo); }
+  .legend .conf { width: 120px; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #000, #fff); border: 1px solid var(--line); }
+  .stats { margin-left: auto; font-variant-numeric: tabular-nums; }
+
+  footer { display: flex; gap: 10px; padding: 10px 28px 16px; overflow-x: auto; align-items: center; }
+  footer .lbl { color: var(--muted); font-size: 13px; flex: none; margin-right: 4px; }
+  footer button { flex: none; background: var(--panel); color: var(--muted); border: 1px solid var(--line); border-radius: 8px;
+    padding: 4px; cursor: pointer; display: flex; align-items: center; gap: 8px; font: inherit; font-size: 12px; }
+  footer button img { height: 44px; border-radius: 4px; }
+  footer button span { padding-right: 6px; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  footer button.sel { border-color: var(--accent); color: var(--text); }
+  .keys { margin-left: auto; color: var(--muted); font-size: 12px; flex: none; }
+  kbd { border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font: 11px ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+<header>
+  <h1>FocusDepth</h1>
+  <span class="sub">Depth from focus + neural depth, fused where focus can be trusted</span>
+  <span class="scene" id="sceneName"></span>
+  <span class="pill" id="pill"><span class="dot"></span><span id="pillText">Connecting…</span></span>
+</header>
+
+<main>
+  <section class="view" id="waiting">
+    <div>
+      <div class="phone"></div>
+      <div class="big">AirDrop a capture to this Mac</div>
+      <div class="hint">FocusDepth app → Captures → Share capture (.zip) → AirDrop</div>
+    </div>
+  </section>
+
+  <section class="view" id="processing">
+    <div class="sweep">
+      <img id="sweepImg" alt="Focus sweep frame">
+      <div class="lensbar">
+        <div class="track"><div class="knob" id="knob"></div></div>
+        <div class="labels"><span>focus near</span><span id="lensText"></span><span>focus far</span></div>
+      </div>
+    </div>
+    <div class="stages">
+      <h2 id="procTitle">Processing</h2>
+      <div class="elapsed" id="elapsed"></div>
+      <ol id="stageList"></ol>
+      <div class="errbox" id="errbox" hidden></div>
+    </div>
+  </section>
+
+  <section class="view" id="results">
+    <div class="grid">
+      <figure><div class="t">Photo<small>Reference frame</small></div><div class="img"><img id="imgRef" alt=""></div></figure>
+      <figure><div class="t">Depth from focus<small>Sharp edges, fails on smooth surfaces</small></div><div class="img"><img id="imgOpt" alt=""></div></figure>
+      <figure><div class="t">Neural depth<small>Depth Anything V2: smooth, but soft</small></div><div class="img"><img id="imgNn" alt=""></div></figure>
+      <figure class="hero"><div class="t">Confidence fusion<small>Focus where it's reliable, neural elsewhere</small></div><div class="img"><img id="imgFus" alt=""></div></figure>
+    </div>
+    <div class="bottom">
+      <span class="legend">near <span class="bar"></span> far</span>
+      <span class="legend" id="confToggle" style="cursor:pointer">focus confidence: low <span class="conf"></span> high <kbd>C</kbd></span>
+      <span class="stats" id="stats"></span>
+    </div>
+  </section>
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+const $ = id => document.getElementById(id);
+let state = null, selected = null, followLive = true, lastStatus = null, showConf = false;
+let sweepTimer = null, sweepIdx = 0, sweepScene = null;
+
+function show(view) {
+  for (const v of ["waiting", "processing", "results"]) $(v).classList.toggle("on", v === view);
+}
+const sceneByName = n => state.scenes.find(s => s.name === n);
+const url = (scene, file, s) => `/results/${encodeURIComponent(scene)}/${file}?v=${Math.round(s ? s.mtime : Date.now())}`;
+
+function startSweep(scene) {
+  if (sweepScene === scene) return;
+  stopSweep(); sweepScene = scene; sweepIdx = 0;
+  const step = () => {
+    const s = sceneByName(scene);
+    const n = s ? s.frames.length : 0;
+    // During processing the scene is not in the list yet; the server reports how many frames it wrote.
+    const count = n || state.n_frames || 10;
+    const i = sweepIdx % count, pos = count > 1 ? i / (count - 1) : 0;
+    $("sweepImg").src = `/results/${encodeURIComponent(scene)}/demo_frames/frame_${String(i).padStart(3, "0")}.jpg`;
+    $("knob").style.left = (pos * 100) + "%";
+    $("lensText").textContent = `frame ${i + 1} / ${count}`;
+    sweepIdx++;
+  };
+  step(); sweepTimer = setInterval(step, 450);
+}
+function stopSweep() { clearInterval(sweepTimer); sweepTimer = null; sweepScene = null; }
+
+function renderStages() {
+  $("procTitle").textContent = state.status === "error" ? "Something went wrong" : "Processing capture";
+  $("elapsed").textContent = state.status === "error" ? "" : `${state.elapsed_s.toFixed(0)} s`;
+  $("stageList").innerHTML = state.stages.map((label, i) => {
+    const cls = i < state.stage ? "done" : (i === state.stage && state.status === "processing" ? "active" : "");
+    return `<li class="${cls}"><span class="ic"></span>${label}</li>`;
+  }).join("");
+  $("errbox").hidden = state.status !== "error";
+  if (state.status === "error") $("errbox").textContent = state.error;
+}
+
+function renderResults(name) {
+  const s = sceneByName(name);
+  if (!s) return;
+  $("imgRef").src = url(name, "reference_rgb.png", s);
+  $("imgOpt").src = url(name, "optical_depth.png", s);
+  $("imgNn").src = url(name, "neural_depth.png", s);
+  $("imgFus").src = url(name, showConf ? "optical_confidence.png" : "confidence_fusion.png", s);
+  $("imgFus").closest("figure").querySelector(".t").innerHTML = showConf
+    ? "Focus confidence<small>White: focus is trustworthy here</small>"
+    : "Confidence fusion<small>Focus where it's reliable, neural elsewhere</small>";
+  const t = s.timings_s || {}, total = Object.values(t).reduce((a, b) => a + b, 0);
+  const parts = [`${s.lens.length} focus frames`];
+  if (s.confidence_mean != null) parts.push(`mean confidence ${s.confidence_mean.toFixed(2)}`);
+  if (total) parts.push(`processed in ${total.toFixed(1)} s${s.device ? " (" + s.device + ")" : ""}`);
+  $("stats").textContent = parts.join("  ·  ");
+}
+
+function renderFooter() {
+  const names = state.scenes.map(s => s.name).join("|");
+  if ($("footer").dataset.names !== names) {
+    $("footer").dataset.names = names;
+    $("footer").innerHTML = `<span class="lbl">Scenes</span>` + state.scenes.map(s =>
+      `<button data-name="${s.name}"><img src="${url(s.name, "confidence_fusion.png", s)}" alt=""><span>${s.name}</span></button>`
+    ).join("") + `<span class="keys"><kbd>←</kbd> <kbd>→</kbd> scenes · <kbd>C</kbd> confidence · <kbd>F</kbd> full screen</span>`;
+    $("footer").querySelectorAll("button").forEach(b => b.onclick = () => select(b.dataset.name));
+  }
+  $("footer").querySelectorAll("button").forEach(b => b.classList.toggle("sel", b.dataset.name === selected && !isBusy()));
+}
+
+const isBusy = () => state && (state.status === "processing" || state.status === "error") && followLive;
+
+function select(name) { selected = name; followLive = false; render(); }
+
+function render() {
+  if (!state) return;
+  const pill = $("pill");
+  pill.className = "pill " + state.status;
+  $("pillText").textContent = { waiting: "Waiting for capture", processing: "Processing", done: "Ready", error: "Error" }[state.status];
+
+  // On first load, open a scene named in the URL (#scene=...) or the capture that just finished.
+  if (lastStatus === null && !selected) {
+    const fromHash = decodeURIComponent((location.hash.match(/scene=([^&]+)/) || [])[1] || "");
+    if (fromHash && sceneByName(fromHash)) { selected = fromHash; followLive = false; }
+    else if (state.status === "done") selected = state.current;
+  }
+  // A new capture always takes over the screen.
+  if (state.status !== lastStatus && (state.status === "processing" || (state.status === "done" && lastStatus === "processing"))) {
+    followLive = true;
+    if (state.status === "done") selected = state.current;
+  }
+  lastStatus = state.status;
+
+  if (isBusy()) {
+    show("processing"); renderStages(); startSweep(state.current);
+    $("sceneName").textContent = state.current || "";
+  } else if (selected && sceneByName(selected)) {
+    stopSweep(); show("results"); renderResults(selected);
+    $("sceneName").textContent = selected;
+  } else {
+    stopSweep(); show("waiting"); $("sceneName").textContent = "";
+  }
+  renderFooter();
+}
+
+async function poll() {
+  try {
+    const r = await fetch("/api/state", { cache: "no-store" });
+    state = await r.json();
+    render();
+  } catch {
+    $("pill").className = "pill error"; $("pillText").textContent = "Demo server stopped";
+  }
+  setTimeout(poll, 700);
+}
+
+document.addEventListener("keydown", e => {
+  if (!state) return;
+  if (e.key === "f" || e.key === "F") {
+    document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+  } else if (e.key === "c" || e.key === "C") {
+    showConf = !showConf; render();
+  } else if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+    const names = state.scenes.map(s => s.name);
+    if (!names.length) return;
+    const i = names.indexOf(selected);
+    const j = i < 0 ? 0 : (i + (e.key === "ArrowRight" ? 1 : -1) + names.length) % names.length;
+    select(names[j]);
+  }
+});
+$("confToggle").onclick = () => { showConf = !showConf; render(); };
+poll();
+</script>
+</body>
+</html>
