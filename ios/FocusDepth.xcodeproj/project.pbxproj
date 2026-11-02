@@ -1,0 +1,261 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54210EE701D38CBCDAC89F1B /* FocusDepth/Views/CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6488491FCB410ED8CFF665D /* FocusDepth/Views/CaptureView.swift */; };
+		8DC972137B460462F700FEA5 /* FocusDepth/FocusDepthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BA090BB01C2CF3405CE230 /* FocusDepth/FocusDepthApp.swift */; };
+		A8EFB7EE03543367B2B47CA2 /* FocusDepth/Camera/FocusSweepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B1DEB68C1247A0494B0B1 /* FocusDepth/Camera/FocusSweepController.swift */; };
+		BC3D0F323EED40C86077302D /* FocusDepth/Models/CaptureManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7E162054F8A5843E6B3BC2 /* FocusDepth/Models/CaptureManifest.swift */; };
+		C0830A4CF0B07356D4E0AB6E /* FocusDepth/Camera/CameraSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD01E63ADE717B627850F1BB /* FocusDepth/Camera/CameraSession.swift */; };
+		D02A9F92F23D8F5E33DECC33 /* FocusDepth/Views/ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B774329CC2D36FFF6891C51E /* FocusDepth/Views/ResultsView.swift */; };
+		F21F6ADEB1EDEFB0F41F9AAD /* FocusDepth/Services/ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D14FA3A7096B08F709AB0B /* FocusDepth/Services/ExportService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0112DAE3F84CB4DF5179BE01 /* FocusDepth/Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FocusDepth/Info.plist; sourceTree = SOURCE_ROOT; };
+		040B1DEB68C1247A0494B0B1 /* FocusDepth/Camera/FocusSweepController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/Camera/FocusSweepController.swift; sourceTree = SOURCE_ROOT; };
+		04D13FD0AA6F0197CF2C9990 /* ../tests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ../tests; sourceTree = SOURCE_ROOT; };
+		19359A61AE2446B51B549167 /* ../requirements.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ../requirements.txt; sourceTree = SOURCE_ROOT; };
+		38A007151ABE87CC01A5B6E9 /* FocusDepth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = FocusDepth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4235227B51436AD86D07C7CF /* ../python */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ../python; sourceTree = SOURCE_ROOT; };
+		5FB66943637FEB59E5652D81 /* ../configs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ../configs; sourceTree = SOURCE_ROOT; };
+		71AB8B6AFB1BAE3DF247E028 /* ../docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ../docs; sourceTree = SOURCE_ROOT; };
+		8EC9A00BFD09B3190AC6B222 /* ../README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ../README.md; sourceTree = SOURCE_ROOT; };
+		B774329CC2D36FFF6891C51E /* FocusDepth/Views/ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/Views/ResultsView.swift; sourceTree = SOURCE_ROOT; };
+		C4D14FA3A7096B08F709AB0B /* FocusDepth/Services/ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/Services/ExportService.swift; sourceTree = SOURCE_ROOT; };
+		C6488491FCB410ED8CFF665D /* FocusDepth/Views/CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/Views/CaptureView.swift; sourceTree = SOURCE_ROOT; };
+		C6BA090BB01C2CF3405CE230 /* FocusDepth/FocusDepthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/FocusDepthApp.swift; sourceTree = SOURCE_ROOT; };
+		DD01E63ADE717B627850F1BB /* FocusDepth/Camera/CameraSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/Camera/CameraSession.swift; sourceTree = SOURCE_ROOT; };
+		FF7E162054F8A5843E6B3BC2 /* FocusDepth/Models/CaptureManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDepth/Models/CaptureManifest.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7561BFB015D8F536760CB671 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C7BF1B777859B71647B1A53 /* Desktop pipeline and documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4235227B51436AD86D07C7CF /* ../python */,
+				5FB66943637FEB59E5652D81 /* ../configs */,
+				71AB8B6AFB1BAE3DF247E028 /* ../docs */,
+				04D13FD0AA6F0197CF2C9990 /* ../tests */,
+				8EC9A00BFD09B3190AC6B222 /* ../README.md */,
+				19359A61AE2446B51B549167 /* ../requirements.txt */,
+			);
+			name = "Desktop pipeline and documentation";
+			sourceTree = "<group>";
+		};
+		3A2A88DEEFF3D1D23E496597 /* FocusDepth */ = {
+			isa = PBXGroup;
+			children = (
+				DD01E63ADE717B627850F1BB /* FocusDepth/Camera/CameraSession.swift */,
+				040B1DEB68C1247A0494B0B1 /* FocusDepth/Camera/FocusSweepController.swift */,
+				C6BA090BB01C2CF3405CE230 /* FocusDepth/FocusDepthApp.swift */,
+				FF7E162054F8A5843E6B3BC2 /* FocusDepth/Models/CaptureManifest.swift */,
+				C4D14FA3A7096B08F709AB0B /* FocusDepth/Services/ExportService.swift */,
+				C6488491FCB410ED8CFF665D /* FocusDepth/Views/CaptureView.swift */,
+				B774329CC2D36FFF6891C51E /* FocusDepth/Views/ResultsView.swift */,
+				0112DAE3F84CB4DF5179BE01 /* FocusDepth/Info.plist */,
+			);
+			name = FocusDepth;
+			sourceTree = "<group>";
+		};
+		B28B7AF69320201D1CF206EB = {
+			isa = PBXGroup;
+			children = (
+				3A2A88DEEFF3D1D23E496597 /* FocusDepth */,
+				2C7BF1B777859B71647B1A53 /* Desktop pipeline and documentation */,
+				FBDC4F23F93125BBEEAE800C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBDC4F23F93125BBEEAE800C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38A007151ABE87CC01A5B6E9 /* FocusDepth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8A3AD980EC179856012B7E /* FocusDepth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C57128001CE614BF8549D6BB /* Build configuration list for PBXNativeTarget "FocusDepth" */;
+			buildPhases = (
+				BCE16DD0260827ECF338C787 /* Sources */,
+				7561BFB015D8F536760CB671 /* Frameworks */,
+				0189424A5A60FED329FA868E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FocusDepth;
+			productName = FocusDepth;
+			productReference = 38A007151ABE87CC01A5B6E9 /* FocusDepth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					0E8A3AD980EC179856012B7E = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 862894B703A6DEDF96A9DD6C /* Build configuration list for PBXProject "FocusDepth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B28B7AF69320201D1CF206EB;
+			productRefGroup = FBDC4F23F93125BBEEAE800C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8A3AD980EC179856012B7E /* FocusDepth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0189424A5A60FED329FA868E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCE16DD0260827ECF338C787 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0830A4CF0B07356D4E0AB6E /* FocusDepth/Camera/CameraSession.swift in Sources */,
+				A8EFB7EE03543367B2B47CA2 /* FocusDepth/Camera/FocusSweepController.swift in Sources */,
+				8DC972137B460462F700FEA5 /* FocusDepth/FocusDepthApp.swift in Sources */,
+				BC3D0F323EED40C86077302D /* FocusDepth/Models/CaptureManifest.swift in Sources */,
+				F21F6ADEB1EDEFB0F41F9AAD /* FocusDepth/Services/ExportService.swift in Sources */,
+				54210EE701D38CBCDAC89F1B /* FocusDepth/Views/CaptureView.swift in Sources */,
+				D02A9F92F23D8F5E33DECC33 /* FocusDepth/Views/ResultsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		639A7CA24D39909E713B47F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6DFPKVP8X;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FocusDepth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.focusdepth.FocusDepth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7082CC0B6FC1282FCEABD07A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6DFPKVP8X;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FocusDepth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.focusdepth.FocusDepth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		89E1FD6268CC0F221A2BE178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E6DE6C99132752C914FEF632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		862894B703A6DEDF96A9DD6C /* Build configuration list for PBXProject "FocusDepth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89E1FD6268CC0F221A2BE178 /* Debug */,
+				E6DE6C99132752C914FEF632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C57128001CE614BF8549D6BB /* Build configuration list for PBXNativeTarget "FocusDepth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7082CC0B6FC1282FCEABD07A /* Debug */,
+				639A7CA24D39909E713B47F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}

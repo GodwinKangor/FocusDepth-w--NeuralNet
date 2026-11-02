@@ -69,13 +69,34 @@ depth-ordering accuracy for every method (format in `python/evaluate.py`).
 
 ## iOS app
 
-The Swift sources are in `ios/FocusDepth/`. To build:
+Open the checked-in project:
 
-1. In Xcode, create a new iOS App project named FocusDepth (SwiftUI, iOS 17+) inside `ios/`,
-   delete its generated `ContentView.swift` / app file, and add the folders from `ios/FocusDepth/`.
-2. Info.plist keys: `NSCameraUsageDescription`, `UIFileSharingEnabled = YES`,
-   `LSSupportsOpeningDocumentsInPlace = YES` (captures then appear in the Files app).
-3. Use Swift 5 language mode (or fix strict-concurrency diagnostics under Swift 6).
+```bash
+open ios/FocusDepth.xcodeproj
+```
+
+1. Select the **FocusDepth** scheme. The app targets iPhone running iOS 17 or later.
+2. For a physical iPhone, open **FocusDepth target > Signing & Capabilities**, select your
+   development team, and change the bundle identifier if your team needs a unique one.
+3. Select your connected iPhone as the run destination and press **Run** (Cmd-R). Allow
+   camera access when prompted. A physical device is required for focus sweeps; the
+   simulator can build the app but has no supported back camera.
+
+Camera permission, Files app sharing, a launch screen, and Swift 5 language mode are
+configured in the project. Captures appear under **On My iPhone > FocusDepth > Captures**.
+
+The Xcode navigator also includes the Python pipeline, configs, tests, and documentation.
+Depth estimation and evaluation still run on the Mac using the Python commands above;
+these files are not compiled into the iOS app.
+
+To check the simulator build from Terminal without setting up signing:
+
+```bash
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild \
+    -project ios/FocusDepth.xcodeproj -scheme FocusDepth \
+    -sdk iphonesimulator -configuration Debug \
+    -derivedDataPath /tmp/focusdepth-derived CODE_SIGNING_ALLOWED=NO build
+```
 
 Use a tripod. See `docs/capture_protocol.md`.
 
