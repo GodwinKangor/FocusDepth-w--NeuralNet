@@ -1,0 +1,39 @@
+# FocusDepth default configuration.
+# Tune thresholds on calibration scenes only, never on held-out evaluation scenes.
+
+capture:
+  # "lens_position_actual" (measured after settling) falls back to "lens_position".
+  lens_position_field: lens_position_actual
+  max_side: 1600          # downscale frames so the long side is at most this (0 = full res)
+
+registration:
+  enabled: true
+  reference: middle       # "middle" or a frame index (after sorting by lens position)
+  motion: affine          # translation | euclidean | affine (affine absorbs focus breathing)
+  iterations: 200
+  eps: 1.0e-6
+  pyramid_levels: 3
+
+optical:
+  method: peak            # peak (argmax + parabola) | weighted (sharpness-weighted mean)
+  laplacian_ksize: 3
+  smooth_sigma: 3.0
+
+confidence:
+  measure: prominence     # prominence | entropy
+  texture_gate: true      # ablation: set false for peak-confidence only
+  gate_low: 0.05          # relative to the 99th percentile of peak sharpness
+  gate_high: 0.25
+
+neural:
+  model: depth-anything-v2-small
+
+alignment:
+  conf_threshold: 0.5     # pixels used to fit neural -> optical mapping
+  min_pixels: 500
+
+fusion:
+  fixed_weight: 0.5
+
+evaluation:
+  min_separation_m: 0.05  # ignore region pairs closer than this in measured distance

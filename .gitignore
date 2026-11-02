@@ -1,0 +1,28 @@
+# Captures, intermediate data and results stay out of Git (large files).
+data/raw/*
+data/processed/*
+results/figures/*
+results/metrics/*
+results/*/*
+!**/.gitkeep
+# Small hand-made annotations are tracked.
+!data/annotations/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Model weights / HF cache
+*.pt
+*.pth
+*.safetensors
+*.mlpackage
+
+# Xcode
+ios/**/xcuserdata/
+ios/**/DerivedData/
+*.xcuserstate
+.DS_Store

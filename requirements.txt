@@ -1,0 +1,10 @@
+numpy
+scipy
+opencv-python-headless
+pyyaml
+matplotlib
+pytest
+# Neural baseline (Depth Anything V2 via Hugging Face)
+torch
+transformers
+pillow
