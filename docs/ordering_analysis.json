@@ -1,0 +1,467 @@
+{
+  "scene_01_20261102_180021": {
+    "distance_source": "visual estimate (ordering only, not measured); replace with tape-measured values",
+    "confidence_threshold": 0.5,
+    "evaluation": {
+      "ordering": {
+        "B1 optical": {
+          "accuracy": 1.0,
+          "n_pairs": 9,
+          "region_medians": {
+            "counter_front": 0.5012497901916504,
+            "can_front": 0.5621193647384644,
+            "bucket": 0.5566881895065308,
+            "rack_middle_shelf": 0.6556133031845093,
+            "back_microwave": 0.7509914040565491
+          },
+          "pairs": [
+            {
+              "near": "counter_front",
+              "far": "can_front",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "bucket",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "rack_middle_shelf",
+              "far": "back_microwave",
+              "correct": true
+            }
+          ]
+        },
+        "B2 neural": {
+          "accuracy": 1.0,
+          "n_pairs": 9,
+          "region_medians": {
+            "counter_front": 0.4667809307575226,
+            "can_front": 0.5791027545928955,
+            "bucket": 0.5940917134284973,
+            "rack_middle_shelf": 0.6544713973999023,
+            "back_microwave": 0.7830753922462463
+          },
+          "pairs": [
+            {
+              "near": "counter_front",
+              "far": "can_front",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "bucket",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "rack_middle_shelf",
+              "far": "back_microwave",
+              "correct": true
+            }
+          ]
+        },
+        "B3 fixed fusion": {
+          "accuracy": 1.0,
+          "n_pairs": 9,
+          "region_medians": {
+            "counter_front": 0.4845805764198303,
+            "can_front": 0.5708026885986328,
+            "bucket": 0.5758596062660217,
+            "rack_middle_shelf": 0.6547070741653442,
+            "back_microwave": 0.7658939361572266
+          },
+          "pairs": [
+            {
+              "near": "counter_front",
+              "far": "can_front",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "bucket",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "rack_middle_shelf",
+              "far": "back_microwave",
+              "correct": true
+            }
+          ]
+        },
+        "Confidence fusion": {
+          "accuracy": 1.0,
+          "n_pairs": 9,
+          "region_medians": {
+            "counter_front": 0.4847477674484253,
+            "can_front": 0.5745552778244019,
+            "bucket": 0.593910276889801,
+            "rack_middle_shelf": 0.6574872136116028,
+            "back_microwave": 0.7806588411331177
+          },
+          "pairs": [
+            {
+              "near": "counter_front",
+              "far": "can_front",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "bucket",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "counter_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "can_front",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "rack_middle_shelf",
+              "correct": true
+            },
+            {
+              "near": "bucket",
+              "far": "back_microwave",
+              "correct": true
+            },
+            {
+              "near": "rack_middle_shelf",
+              "far": "back_microwave",
+              "correct": true
+            }
+          ]
+        }
+      },
+      "regions": {
+        "counter_front": {
+          "type": "textureless",
+          "mean_confidence": 0.6735606789588928,
+          "coverage_at_threshold": 0.8333333333333334
+        },
+        "can_front": {
+          "type": "textured",
+          "mean_confidence": 0.3619220554828644,
+          "coverage_at_threshold": 0.39873333333333333
+        },
+        "bucket": {
+          "type": "textureless",
+          "mean_confidence": 0.007374180015176535,
+          "coverage_at_threshold": 0.002511961722488038
+        },
+        "rack_middle_shelf": {
+          "type": "textured",
+          "mean_confidence": 0.5979335308074951,
+          "coverage_at_threshold": 0.6880952380952381
+        },
+        "back_microwave": {
+          "type": "textured",
+          "mean_confidence": 0.2496306598186493,
+          "coverage_at_threshold": 0.21982905982905984
+        }
+      }
+    }
+  },
+  "scene_01_20261102_182153": {
+    "distance_source": "visual estimate (ordering only, not measured); replace with tape-measured values",
+    "confidence_threshold": 0.5,
+    "evaluation": {
+      "ordering": {
+        "B1 optical": {
+          "accuracy": 0.6666666666666666,
+          "n_pairs": 6,
+          "region_medians": {
+            "can_near": 0.5535247325897217,
+            "thermometer_label": 0.057679831981658936,
+            "pink_box": 0.5210087299346924,
+            "back_shelf": 0.7821774482727051
+          },
+          "pairs": [
+            {
+              "near": "can_near",
+              "far": "thermometer_label",
+              "correct": false
+            },
+            {
+              "near": "can_near",
+              "far": "pink_box",
+              "correct": false
+            },
+            {
+              "near": "can_near",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "pink_box",
+              "far": "back_shelf",
+              "correct": true
+            }
+          ]
+        },
+        "B2 neural": {
+          "accuracy": 1.0,
+          "n_pairs": 6,
+          "region_medians": {
+            "can_near": -0.9840613007545471,
+            "thermometer_label": 0.056276291608810425,
+            "pink_box": 0.47905755043029785,
+            "back_shelf": 0.7424178123474121
+          },
+          "pairs": [
+            {
+              "near": "can_near",
+              "far": "thermometer_label",
+              "correct": true
+            },
+            {
+              "near": "can_near",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "can_near",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "pink_box",
+              "far": "back_shelf",
+              "correct": true
+            }
+          ]
+        },
+        "B3 fixed fusion": {
+          "accuracy": 1.0,
+          "n_pairs": 6,
+          "region_medians": {
+            "can_near": -0.2273373156785965,
+            "thermometer_label": 0.047783080488443375,
+            "pink_box": 0.49851590394973755,
+            "back_shelf": 0.7618369460105896
+          },
+          "pairs": [
+            {
+              "near": "can_near",
+              "far": "thermometer_label",
+              "correct": true
+            },
+            {
+              "near": "can_near",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "can_near",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "pink_box",
+              "far": "back_shelf",
+              "correct": true
+            }
+          ]
+        },
+        "Confidence fusion": {
+          "accuracy": 1.0,
+          "n_pairs": 6,
+          "region_medians": {
+            "can_near": -0.9162716865539551,
+            "thermometer_label": 0.044864244759082794,
+            "pink_box": 0.5037847757339478,
+            "back_shelf": 0.7622174024581909
+          },
+          "pairs": [
+            {
+              "near": "can_near",
+              "far": "thermometer_label",
+              "correct": true
+            },
+            {
+              "near": "can_near",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "can_near",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "pink_box",
+              "correct": true
+            },
+            {
+              "near": "thermometer_label",
+              "far": "back_shelf",
+              "correct": true
+            },
+            {
+              "near": "pink_box",
+              "far": "back_shelf",
+              "correct": true
+            }
+          ]
+        }
+      },
+      "regions": {
+        "can_near": {
+          "type": "textured",
+          "mean_confidence": 0.04201875627040863,
+          "coverage_at_threshold": 0.0
+        },
+        "thermometer_label": {
+          "type": "textured",
+          "mean_confidence": 0.4776829779148102,
+          "coverage_at_threshold": 0.5327045454545455
+        },
+        "pink_box": {
+          "type": "textured",
+          "mean_confidence": 0.6980156898498535,
+          "coverage_at_threshold": 0.8526105263157895
+        },
+        "back_shelf": {
+          "type": "textured",
+          "mean_confidence": 0.4440166652202606,
+          "coverage_at_threshold": 0.4927179487179487
+        }
+      }
+    }
+  }
+}
