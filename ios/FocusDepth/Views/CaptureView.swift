@@ -5,6 +5,8 @@ struct CaptureView: View {
     @StateObject private var sweep: FocusSweepController
     @State private var settings = FocusSweepController.Settings()
     @State private var setupError: String?
+    @State private var capabilityReportURL: URL?
+    @State private var capabilityError: String?
 
     init() {
         _sweep = StateObject(wrappedValue: FocusSweepController(camera: CameraSession()))
@@ -31,6 +33,15 @@ struct CaptureView: View {
                         Slider(value: $settings.maxLensPosition, in: 0...1)
                     }
                     TextField("Notes", text: $settings.notes)
+                    if let capabilityReportURL {
+                        ShareLink(item: capabilityReportURL) {
+                            Label("Share camera capabilities", systemImage: "square.and.arrow.up")
+                        }
+                        .disabled(sweep.isCapturing)
+                    }
+                    if let capabilityError {
+                        Text(capabilityError).font(.footnote).foregroundStyle(.secondary)
+                    }
                 }
                 .frame(maxHeight: 260)
 
@@ -54,6 +65,14 @@ struct CaptureView: View {
                 do {
                     try await camera.configure()
                     camera.start()
+                    do {
+                        let report = try await camera.capabilityReport()
+                        let url = URL.documentsDirectory.appendingPathComponent("camera_capabilities.json")
+                        try report.write(to: url, options: .atomic)
+                        capabilityReportURL = url
+                    } catch {
+                        capabilityError = "Could not save camera capabilities: \(error.localizedDescription)"
+                    }
                 } catch {
                     setupError = error.localizedDescription
                 }

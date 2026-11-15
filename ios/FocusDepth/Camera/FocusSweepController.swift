@@ -35,7 +35,13 @@ final class FocusSweepController: ObservableObject {
         progress = 0
         defer { isCapturing = false }
         do {
+            guard device.isLockingFocusWithCustomLensPositionSupported,
+                  device.isFocusModeSupported(.locked) else {
+                throw CameraError.manualFocusUnavailable
+            }
             let folder = try ExportService.newCaptureFolder(sceneId: settings.sceneId)
+            let capabilities = try await camera.capabilityReport()
+            try capabilities.write(to: folder.appendingPathComponent("camera_capabilities.json"), options: .atomic)
             status = "Locking exposure and white balance"
             let wbGains = try await lockExposureAndWhiteBalance(device)
 

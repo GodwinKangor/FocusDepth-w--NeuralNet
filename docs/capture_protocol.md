@@ -18,3 +18,23 @@ Record per scene: lighting, distances, which surfaces are textured/textureless, 
 
 If discrete still capture is unreliable (focus not settling, inconsistent processing),
 capture a slow focus-sweep video and extract frames with matching lensPosition metadata.
+
+## Camera capability report
+
+On launch, the app saves `camera_capabilities.json` in its Documents directory.
+Use **Share camera capabilities** in the capture form to export it. A fresh copy
+is also included with every focus sweep. Run this on the physical iPhone 15 Pro;
+the simulator cannot establish the phone's sensor capabilities.
+
+The report lists rear main, ultrawide, telephoto, and LiDAR devices discovered by
+AVFoundation, manual lens-position support, exposure/white-balance controls,
+advertised video/depth formats, and supported multicamera device sets. Device IDs
+link each supported set to its device entries.
+
+This is a capability inventory, not a successful simultaneous-capture test. Next,
+inspect the exported report and validate selected formats, synchronized RGB/depth,
+manual focus behavior, and hardware/system-pressure budgets on the phone.
+
+For metric experiments, use separate calibration and evaluation targets. Record
+measured target-plane distances, the phone reference point used for measurement,
+and measurement uncertainty. Do not score calibration targets as held-out results.
