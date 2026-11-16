@@ -1,0 +1,2 @@
+# Optional presentation export dependency; core processing uses requirements.txt.
+imageio-ffmpeg==0.8.1
