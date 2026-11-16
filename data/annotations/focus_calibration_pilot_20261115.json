@@ -1,0 +1,15 @@
+{
+  "capture_directory": "data/raw/calibration_trial_20261115_013413",
+  "source_archive": "scene_01_20261115_013413.zip",
+  "user_reported_target_distance_m": 0.4,
+  "distance_description": "Approximately 40 cm, confirmed by user after export",
+  "total_measurement_uncertainty_m": null,
+  "original_capture_purpose": "scene",
+  "original_manifest_modified": false,
+  "status": "Calibration pilot diagnostic; original capture not relabelled or included in fitted calibration",
+  "notes": [
+    "No measured distance was recorded in original manifest.",
+    "Default central ROI crosses box/wall boundary; separate interior patch used only for diagnostic focus response.",
+    "Prior old-tape uncertainty remains unquantified."
+  ]
+}

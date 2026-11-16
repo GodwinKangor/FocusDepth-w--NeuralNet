@@ -1,0 +1,106 @@
+{
+  "scope": "Measured calibration capture index and diagnostic observations; not independent validation",
+  "roi": [
+    0.45,
+    0.45,
+    0.55,
+    0.55
+  ],
+  "captures": [
+    {
+      "capture": "calibration_20261115_143009",
+      "source_manifest_sha256": "7d6030961d618c06b61eb373e4ef26530011ff0645c8ece39450a31c9f5f274a",
+      "capture_purpose": "calibration",
+      "target_distance_m": 0.4,
+      "recorded_uncertainty_m": 0.13,
+      "analysis_uncertainty_m": 0.002,
+      "uncertainty_correction": {
+        "capture": "scene_01_20261115_143009",
+        "original_uncertainty_m": 0.13,
+        "corrected_uncertainty_m": 0.002,
+        "source": "User final clarification: 0.2 cm, recorded as symmetric +/-0.2 cm for this capture.",
+        "interpretation": "User-estimated +/-0.2 cm (2 mm), not independently verified precision or a complete error budget.",
+        "clarification_history": [
+          "Initial clarification requested approximately 0\u20132 cm.",
+          "User revised to +/-1 cm.",
+          "User subsequently specified 0.2 cm; latest estimate supersedes earlier values."
+        ]
+      },
+      "peak_lens_position": 0.5592128558690757,
+      "prominence": 0.8251367195875878,
+      "lidar_roi_median_m": 0.4024658203125
+    },
+    {
+      "capture": "calibration_20261115_152145",
+      "source_manifest_sha256": "ca58982a6d7ae796fefd61f31d1035b1d7639db2f3dd68ca9e1c105d792785a0",
+      "capture_purpose": "calibration",
+      "target_distance_m": 0.2,
+      "recorded_uncertainty_m": 0.005,
+      "analysis_uncertainty_m": 0.005,
+      "uncertainty_correction": null,
+      "peak_lens_position": 0.24722219401685816,
+      "prominence": 0.7159884792408424,
+      "lidar_roi_median_m": 0.1953125
+    },
+    {
+      "capture": "calibration_20261115_152541",
+      "source_manifest_sha256": "82af7d8b2a89445856abea2a286be6ca04033aaeb1d8e99f1922f6d44fe96d5a",
+      "capture_purpose": "calibration",
+      "target_distance_m": 0.4,
+      "recorded_uncertainty_m": 0.003,
+      "analysis_uncertainty_m": 0.003,
+      "uncertainty_correction": null,
+      "peak_lens_position": 0.5480382727244196,
+      "prominence": 0.8407203214997527,
+      "lidar_roi_median_m": 0.39453125
+    },
+    {
+      "capture": "calibration_20261115_152557",
+      "source_manifest_sha256": "a951db874d38425c13813c468a23b63e0729e42a1e7e77210c106656938a4984",
+      "capture_purpose": "calibration",
+      "target_distance_m": 0.4,
+      "recorded_uncertainty_m": 0.003,
+      "analysis_uncertainty_m": 0.003,
+      "uncertainty_correction": null,
+      "peak_lens_position": 0.5482220696375263,
+      "prominence": 0.8372333699083265,
+      "lidar_roi_median_m": 0.3944091796875
+    },
+    {
+      "capture": "calibration_20261115_152845",
+      "source_manifest_sha256": "d16bd3897b8b3399b9d95b758a86e4c49eae80bdc67022780b679f22f627a6dd",
+      "capture_purpose": "calibration",
+      "target_distance_m": 0.6,
+      "recorded_uncertainty_m": 0.003,
+      "analysis_uncertainty_m": 0.003,
+      "uncertainty_correction": null,
+      "peak_lens_position": 0.6588653641269235,
+      "prominence": 0.8405423352993217,
+      "lidar_roi_median_m": 0.60205078125
+    },
+    {
+      "capture": "calibration_20261115_153113",
+      "source_manifest_sha256": "6f921dd7e96c42832f100f2ad069611759a07e939325012fbc537d325785f8f8",
+      "capture_purpose": "calibration",
+      "target_distance_m": 0.8,
+      "recorded_uncertainty_m": 0.003,
+      "analysis_uncertainty_m": 0.003,
+      "uncertainty_correction": null,
+      "peak_lens_position": 0.7080403328478647,
+      "prominence": 0.8618047669519662,
+      "lidar_roi_median_m": 0.7998046875
+    },
+    {
+      "capture": "calibration_20261115_153643",
+      "source_manifest_sha256": "1f207ef62ec561eae25162abdd850573d6ef1dbc45a49b8ae8f78b133f1c95ec",
+      "capture_purpose": "calibration",
+      "target_distance_m": 1.0,
+      "recorded_uncertainty_m": 0.003,
+      "analysis_uncertainty_m": 0.003,
+      "uncertainty_correction": null,
+      "peak_lens_position": 0.7377773444464015,
+      "prominence": 0.850262410382187,
+      "lidar_roi_median_m": 1.00390625
+    }
+  ]
+}

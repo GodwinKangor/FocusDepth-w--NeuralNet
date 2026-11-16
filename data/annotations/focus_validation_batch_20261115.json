@@ -1,0 +1,50 @@
+{
+  "scope": "Validation captures excluded from calibration fit; source measurements remain unmodified",
+  "calibration_model_sha256": "ee8e85e46c5f5660756c64eddcb658fb12e1d53f45f69d03ef702b40c78e5d72",
+  "captures": [
+    {
+      "folder": "data/raw/validation_20261115_155558",
+      "manifest_sha256": "66676c76ca42b6870bbe855cc23f61562e3e38eae854004ef4b8178dbc0dfd43",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T20:55:59Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.25,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_160214",
+      "manifest_sha256": "fc71810436777b84fd6645f270fc3e2c6e4781cae8b0e3870f98ae87cb96f1fb",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:02:14Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.5,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_160413",
+      "manifest_sha256": "6faef4a8fbdb16c4fb238068b7f25b2a2e86b164e3805f76954988651c70033b",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:04:13Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.7,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_160935",
+      "manifest_sha256": "6016d7169085ae2c06ee506f60be899fd01e2d237f81e57f0fe93eef39a326fd",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:09:36Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003
+    }
+  ]
+}

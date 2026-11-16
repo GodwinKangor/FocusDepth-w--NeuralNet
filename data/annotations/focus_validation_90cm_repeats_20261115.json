@@ -1,0 +1,62 @@
+{
+  "model_sha256": "ee8e85e46c5f5660756c64eddcb658fb12e1d53f45f69d03ef702b40c78e5d72",
+  "nominal_target_distance_m": 0.9,
+  "target_visual_identity": "Best Yet rice box",
+  "captures": [
+    {
+      "folder": "data/raw/validation_20261115_162022",
+      "manifest_sha256": "1b447935b2831e08ae3bf7940b4575de8335915ff8c5ca574d49d0bb4e7c06ba",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:20:23Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_162038",
+      "manifest_sha256": "eb04f8c90ea479dc7ea69d9563ce6329c37be422dde3a11a9d8cf3dda641b067",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:20:38Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_162122",
+      "manifest_sha256": "5466203972770a99020a02bce192bc88ee48a9bbec878a8f68aa15d75157638a",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:21:23Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_162158",
+      "manifest_sha256": "554064b137b0ee2b8e8cc137bcc93e0a247fe787c3656786f1ebd48225aa68b5",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:21:58Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003
+    },
+    {
+      "folder": "data/raw/validation_20261115_162247",
+      "manifest_sha256": "ef0c73c536392e8e7a9bcc364ac0b4f598c822439b263536f38315617ab2c270",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:22:47Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003
+    }
+  ]
+}

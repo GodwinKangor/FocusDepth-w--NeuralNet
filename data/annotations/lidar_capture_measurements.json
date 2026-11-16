@@ -1,0 +1,293 @@
+{
+  "measurement_source": "User report accompanying three capture ZIPs",
+  "object_distance_uncertainty_m": 0.01,
+  "uncertainty_description": "Approximate +/-1 cm surface-location/measurement ambiguity; not a statistical standard deviation. Packages have different shapes.",
+  "wall_distance_m": 1.19,
+  "wall_distance_uncertainty_m": null,
+  "distance_reference_point": "Estimated rear-camera position: camera projects over table toward objects; screen approximately 1 cm inward from table edge, plus user-estimated 1.5 cm phone/camera offset.",
+  "distance_convention": "Not yet confirmed: camera-axis depth versus tape/slant distance",
+  "scenes": [
+    {
+      "archive": "scene-20-40-65.zip",
+      "local_capture_directory": "data/raw/scene-20-40-65",
+      "original_scene_id": "scene_01",
+      "created_at": "2026-11-15T03:23:03Z",
+      "nominal_object_distances_m": [
+        0.2,
+        0.4,
+        0.65
+      ],
+      "distance_assignment_source": "User confirmed filename order: first/nearest object, next object, then farthest object",
+      "regions": [
+        {
+          "name": "coffee_filters",
+          "distance_m": 0.2,
+          "bbox": [
+            1150,
+            100,
+            1550,
+            300
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "green_tea",
+          "distance_m": 0.4,
+          "bbox": [
+            1140,
+            800,
+            1300,
+            1020
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "pecans",
+          "distance_m": 0.65,
+          "bbox": [
+            900,
+            510,
+            1150,
+            620
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "wall",
+          "distance_m": 1.19,
+          "bbox": [
+            350,
+            750,
+            650,
+            1050
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        }
+      ],
+      "objects": [
+        {
+          "order_near_to_far": 1,
+          "distance_m": 0.2,
+          "approximate_uncertainty_m": 0.01
+        },
+        {
+          "order_near_to_far": 2,
+          "distance_m": 0.4,
+          "approximate_uncertainty_m": 0.01
+        },
+        {
+          "order_near_to_far": 3,
+          "distance_m": 0.65,
+          "approximate_uncertainty_m": 0.01
+        }
+      ],
+      "wall_distance_m": 1.19,
+      "wall_adjusted_distance_range_m": [
+        1.185,
+        1.19
+      ]
+    },
+    {
+      "archive": "scene-40-60-85.zip",
+      "local_capture_directory": "data/raw/scene-40-60-85",
+      "original_scene_id": "scene_01",
+      "created_at": "2026-11-15T03:36:16Z",
+      "nominal_object_distances_m": [
+        0.4,
+        0.6,
+        0.85
+      ],
+      "distance_assignment_source": "User confirmed filename order: first/nearest object, next object, then farthest object",
+      "regions": [
+        {
+          "name": "green_tea",
+          "distance_m": 0.4,
+          "bbox": [
+            1150,
+            160,
+            1300,
+            400
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "cocoa",
+          "distance_m": 0.6,
+          "bbox": [
+            1110,
+            750,
+            1200,
+            850
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "premium_box",
+          "distance_m": 0.85,
+          "bbox": [
+            1040,
+            590,
+            1110,
+            670
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "wall",
+          "distance_m": 1.19,
+          "bbox": [
+            350,
+            750,
+            650,
+            1050
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        }
+      ],
+      "objects": [
+        {
+          "order_near_to_far": 1,
+          "distance_m": 0.4,
+          "approximate_uncertainty_m": 0.01
+        },
+        {
+          "order_near_to_far": 2,
+          "distance_m": 0.6,
+          "approximate_uncertainty_m": 0.01
+        },
+        {
+          "order_near_to_far": 3,
+          "distance_m": 0.85,
+          "approximate_uncertainty_m": 0.01
+        }
+      ],
+      "wall_distance_m": 1.19,
+      "wall_adjusted_distance_range_m": [
+        1.185,
+        1.19
+      ]
+    },
+    {
+      "archive": "scene-40-60-100.zip",
+      "local_capture_directory": "data/raw/scene-40-60-100",
+      "original_scene_id": "scene_01",
+      "created_at": "2026-11-15T03:42:11Z",
+      "nominal_object_distances_m": [
+        0.4,
+        0.6,
+        1.0
+      ],
+      "distance_assignment_source": "User confirmed filename order: first/nearest object, next object, then farthest object",
+      "regions": [
+        {
+          "name": "pepper",
+          "distance_m": 0.4,
+          "bbox": [
+            1200,
+            430,
+            1320,
+            540
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "cocoa",
+          "distance_m": 0.6,
+          "bbox": [
+            1110,
+            750,
+            1200,
+            850
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "pecans",
+          "distance_m": 1.0,
+          "bbox": [
+            800,
+            590,
+            940,
+            670
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": 0.01,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        },
+        {
+          "name": "wall",
+          "distance_m": 1.19,
+          "bbox": [
+            350,
+            750,
+            650,
+            1050
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "assignment_status": "Package identity assigned by visual inspection and confirmed near-to-far distance order; provisional surface ROI"
+        }
+      ],
+      "objects": [
+        {
+          "order_near_to_far": 1,
+          "distance_m": 0.4,
+          "approximate_uncertainty_m": 0.01
+        },
+        {
+          "order_near_to_far": 2,
+          "distance_m": 0.6,
+          "approximate_uncertainty_m": 0.01
+        },
+        {
+          "order_near_to_far": 3,
+          "distance_m": 1.0,
+          "approximate_uncertainty_m": 0.01
+        }
+      ],
+      "wall_distance_m": 1.19,
+      "unmeasured_objects": [
+        "Premium box visible behind foreground containers; excluded from metric scoring"
+      ],
+      "wall_adjusted_distance_range_m": [
+        1.185,
+        1.19
+      ]
+    }
+  ],
+  "object_order": "Nearest to farthest, as confirmed by user; filename numbers give successive object distances",
+  "wall_distance_description": "Original table-edge tape distance 121\u2013121.5 cm; subtract estimated 2.5 cm toward-target camera offset to obtain 118.5\u2013119 cm. Existing 119 cm nominal retained as rounded reference. Wall touches far end of table.",
+  "table_edge_to_camera_offset_m": 0.025,
+  "table_edge_to_camera_offset_status": "User-estimated geometry, not an independently measured optical-center calibration",
+  "distance_correction": "Camera is toward targets from tape/table-edge reference: camera distance = original tape distance - 0.025 m. Existing object nominal distances already include this subtraction; do not subtract again.",
+  "wall_original_tape_distance_range_m": [
+    1.21,
+    1.215
+  ],
+  "wall_adjusted_distance_range_m": [
+    1.185,
+    1.19
+  ],
+  "tape_condition": "User reports old tape with bumps; additional measurement error is plausible but unquantified.",
+  "object_distance_uncertainty_status": "The initial +/-1 cm estimate describes surface-location ambiguity, not a verified total uncertainty bound; tape/offset errors may add to it."
+}

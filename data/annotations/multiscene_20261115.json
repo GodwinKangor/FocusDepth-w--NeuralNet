@@ -1,0 +1,182 @@
+{
+  "distance_source": "Archive filenames, in nearest-to-farthest order as in prior scenes",
+  "assignment_status": "User confirmed identities and distances: blue stapler15, Excedrin20, Universal staples40, Simply Done staples50, Annies crackers60 (cm).",
+  "measurement_uncertainty": "Not supplied for these new multi-object scenes; do not silently reuse earlier single-target uncertainty",
+  "calibration_frozen": true,
+  "scenes": [
+    {
+      "scene": "scene-20-40-60",
+      "capture_directory": "data/raw/scene-20-40-60",
+      "regions": [
+        {
+          "name": "excedrin_box",
+          "distance_m": 0.2,
+          "bbox": [
+            1420,
+            940,
+            1700,
+            1060
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "universal_staples",
+          "distance_m": 0.4,
+          "bbox": [
+            1120,
+            900,
+            1230,
+            960
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "annies_crackers",
+          "distance_m": 0.6,
+          "bbox": [
+            920,
+            790,
+            1030,
+            930
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ]
+    },
+    {
+      "scene": "scene-20-40-50-60",
+      "capture_directory": "data/raw/scene-20-40-50-60",
+      "regions": [
+        {
+          "name": "excedrin_box",
+          "distance_m": 0.2,
+          "bbox": [
+            1420,
+            940,
+            1700,
+            1060
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "universal_staples",
+          "distance_m": 0.4,
+          "bbox": [
+            1120,
+            900,
+            1230,
+            960
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "simply_done_staples",
+          "distance_m": 0.5,
+          "bbox": [
+            1250,
+            780,
+            1340,
+            825
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "annies_crackers",
+          "distance_m": 0.6,
+          "bbox": [
+            920,
+            790,
+            1030,
+            930
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ]
+    },
+    {
+      "scene": "scene-15-20-40-50-60",
+      "capture_directory": "data/raw/scene-15-20-40-50-60",
+      "regions": [
+        {
+          "name": "blue_stapler",
+          "distance_m": 0.15,
+          "bbox": [
+            1770,
+            840,
+            1850,
+            1030
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": false
+        },
+        {
+          "name": "excedrin_box",
+          "distance_m": 0.2,
+          "bbox": [
+            1420,
+            940,
+            1700,
+            1060
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "universal_staples",
+          "distance_m": 0.4,
+          "bbox": [
+            1120,
+            900,
+            1230,
+            960
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "simply_done_staples",
+          "distance_m": 0.5,
+          "bbox": [
+            1250,
+            780,
+            1340,
+            825
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "annies_crackers",
+          "distance_m": 0.6,
+          "bbox": [
+            920,
+            790,
+            1030,
+            930
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ]
+    }
+  ]
+}

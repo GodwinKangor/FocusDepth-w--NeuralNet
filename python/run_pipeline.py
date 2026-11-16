@@ -15,6 +15,7 @@ import cv2
 import numpy as np
 import yaml
 
+import all_in_focus
 import confidence as conf_mod
 import depth_alignment
 import evaluate
@@ -61,6 +62,7 @@ def main() -> None:
     ap.add_argument("--input", required=True, type=Path, help="scene folder with manifest.json and frames")
     ap.add_argument("--output", required=True, type=Path)
     ap.add_argument("--config", type=Path, default=REPO / "configs" / "default.yaml")
+    ap.add_argument("--neural-input", choices=["reference", "aif"], default="reference")
     ap.add_argument("--model", default=None, help="override neural.model from the config")
     ap.add_argument("--fusion", choices=["all", "fixed", "confidence"], default="all")
     ap.add_argument("--neural-depth", type=Path, help="precomputed raw neural .npy (skips PyTorch)")
@@ -111,6 +113,15 @@ def main() -> None:
     timings["optical"] = tick() - t
     log.info("optical depth and confidence done")
 
+    if reg.failed:
+        if args.neural_input == "aif":
+            raise ValueError(f"Cannot use AIF neural input: registration failed for frames {reg.failed}")
+        log.warning("Exported AIF is diagnostic only: registration failed for frames %s", reg.failed)
+    aif, labels = all_in_focus.compose(reg.images, sharp, ref)
+    cv2.imwrite(str(out / "all_in_focus.png"), aif)
+    np.save(out / "aif_source_indices.npy", labels)
+    neural_image = aif if args.neural_input == "aif" else reference
+
     # --- neural depth ----------------------------------------------------------
     t = tick()
     neural_info: dict = {}
@@ -123,7 +134,7 @@ def main() -> None:
     else:
         import neural_depth
 
-        raw, neural_info = neural_depth.predict(reference, args.model or cfg["neural"]["model"])
+        raw, neural_info = neural_depth.predict(neural_image, args.model or cfg["neural"]["model"])
     timings["neural"] = tick() - t
     log.info("neural depth done")
 
@@ -162,7 +173,7 @@ def main() -> None:
         "reference_index": ref,
         "image_shape": list(reference.shape[:2]),
         "registration": {"crop_xyxy": list(reg.crop), "ecc_scores": reg.ecc_scores, "failed": reg.failed},
-        "neural": neural_info,
+        "neural": {**neural_info, "input": args.neural_input},
         "alignment": params.to_dict(),
         "direction_check": {
             "spearman_raw_neural_vs_optical": depth_direction_raw(d_opt, raw, conf, a_cfg["conf_threshold"]),

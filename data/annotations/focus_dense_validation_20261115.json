@@ -1,0 +1,70 @@
+{
+  "scope": "Narrow-range sampling diagnostic with frozen calibration; not a new calibration fit",
+  "model_sha256": "ee8e85e46c5f5660756c64eddcb658fb12e1d53f45f69d03ef702b40c78e5d72",
+  "captures": [
+    {
+      "folder": "data/raw/validation_20261115_163030",
+      "manifest_sha256": "1d7814bae4ae44a12705cbcc37ccaaeb360e0217195833f23f70c43bbc99629a",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:30:31Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003,
+      "n_frames": 24,
+      "requested_lens_range": [
+        0.6013602,
+        0.85284865
+      ]
+    },
+    {
+      "folder": "data/raw/validation_20261115_163151",
+      "manifest_sha256": "ddab599e3d50505a2b9ede02770419e990b9cf7fda4aeb19426d7c85cc22c454",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:31:51Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003,
+      "n_frames": 40,
+      "requested_lens_range": [
+        0.6013602,
+        0.85284865
+      ]
+    },
+    {
+      "folder": "data/raw/validation_20261115_163253",
+      "manifest_sha256": "e5b811e67fef05ea39ea9c8cc23550ff97b62fce85f46c3a99de796e5f95b23d",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:32:54Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003,
+      "n_frames": 40,
+      "requested_lens_range": [
+        0.6013602,
+        0.85284865
+      ]
+    },
+    {
+      "folder": "data/raw/validation_20261115_163350",
+      "manifest_sha256": "5f7bf7f7fcaa98bdd96c34f22d81a9cadd007eb9ab8a642166fe13db066dbaf4",
+      "capture_identity": [
+        "com.apple.avfoundation.avcapturedevice.built-in_video:9",
+        "2026-11-15T21:33:50Z"
+      ],
+      "purpose": "validation",
+      "measured_distance_m": 0.9,
+      "estimated_uncertainty_m": 0.003,
+      "n_frames": 40,
+      "requested_lens_range": [
+        0.6013602,
+        0.85284865
+      ]
+    }
+  ]
+}

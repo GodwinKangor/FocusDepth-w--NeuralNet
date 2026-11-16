@@ -65,7 +65,9 @@ def fit_affine(src: np.ndarray, dst: np.ndarray, weights: np.ndarray | None = No
         r = dst - A @ coef
         s = 1.4826 * np.median(np.abs(r - np.median(r))) + 1e-12
         u = np.abs(r) / (huber_k * s)
-        w = w0 * np.where(u <= 1.0, 1.0, 1.0 / u)
+        huber_weights = np.ones_like(u)
+        np.divide(1.0, u, out=huber_weights, where=u > 1.0)
+        w = w0 * huber_weights
     return float(coef[0]), float(coef[1])
 
 

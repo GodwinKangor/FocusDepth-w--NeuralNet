@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "corrections": {
+    "7d6030961d618c06b61eb373e4ef26530011ff0645c8ece39450a31c9f5f274a": {
+      "capture": "scene_01_20261115_143009",
+      "original_uncertainty_m": 0.13,
+      "corrected_uncertainty_m": 0.002,
+      "source": "User final clarification: 0.2 cm, recorded as symmetric +/-0.2 cm for this capture.",
+      "interpretation": "User-estimated +/-0.2 cm (2 mm), not independently verified precision or a complete error budget.",
+      "clarification_history": [
+        "Initial clarification requested approximately 0\u20132 cm.",
+        "User revised to +/-1 cm.",
+        "User subsequently specified 0.2 cm; latest estimate supersedes earlier values."
+      ]
+    }
+  }
+}
