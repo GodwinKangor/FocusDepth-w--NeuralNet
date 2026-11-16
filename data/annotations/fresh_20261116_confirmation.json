@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-16",
+  "source": "User confirmation in conversation after reviewing the RGB audit assignment question",
+  "original_annotations": "data/annotations/fresh_20261116.json",
+  "captures": [
+    "fresh_multi_smooth_20261116_124158",
+    "fresh_multi_smooth_20261116_124401",
+    "fresh_multi_smooth_20261116_124416"
+  ],
+  "target_description": "Staple-pin boxes covered with matte napkin paper",
+  "confirmed_region_distances_m": {
+    "smooth_box_30": 0.3,
+    "smooth_box_50": 0.5,
+    "smooth_box_70": 0.7
+  },
+  "user_statement": "the objects were staple pin boxes covered by napkin paper(matte) and yes the first box is 30,then 50 then 70",
+  "effect": "Confirms existing multi-box object-to-distance assignments; no bounding boxes, nominal distances, predictions or scores changed",
+  "remaining_limits": "Exact tape readings and uncertainty not supplied; confirmation does not establish pixel-level surface purity or resolve occlusion and LiDAR coverage"
+}

@@ -1,0 +1,263 @@
+{
+  "description": "Fresh held-out captures, 2026-11-16. Patches marked on native RGB reference frames before any depth output was viewed.",
+  "distance_source": "User: nominal 30/50/70 cm front-face distances; text sweeps captured 30, 50, 70 in order with stale scene ID; exact tape readings not supplied",
+  "measurement_uncertainty": "Not supplied; nominal distances. Validation placements the same morning differed by about 2 cm.",
+  "smooth_textured_caveat": "Smooth (paper-covered) and textured (staples box) targets are different objects, not the same object with and without paper.",
+  "calibration_frozen": true,
+  "scenes": [
+    {
+      "scene": "fresh_multi_smooth_20261116_124158",
+      "regions": [
+        {
+          "name": "smooth_box_30",
+          "distance_m": 0.3,
+          "bbox": [
+            1130,
+            600,
+            1310,
+            695
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "smooth_box_50",
+          "distance_m": 0.5,
+          "bbox": [
+            1020,
+            790,
+            1095,
+            910
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "smooth_box_70",
+          "distance_m": 0.7,
+          "bbox": [
+            830,
+            790,
+            895,
+            885
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "note": "Distance by user: boxes kept at 30/50/70 cm, moved sideways between layouts; box-to-distance assignment by visual nearest-to-farthest order (base position on counter), confirm with user",
+      "capture_directory": "data/raw/fresh_multi_smooth_20261116_124158"
+    },
+    {
+      "scene": "fresh_multi_smooth_20261116_124401",
+      "regions": [
+        {
+          "name": "smooth_box_30",
+          "distance_m": 0.3,
+          "bbox": [
+            1100,
+            570,
+            1200,
+            720
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "smooth_box_50",
+          "distance_m": 0.5,
+          "bbox": [
+            880,
+            800,
+            1060,
+            910
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "smooth_box_70",
+          "distance_m": 0.7,
+          "bbox": [
+            772,
+            770,
+            850,
+            812
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true,
+          "note": "Small visible area next to occluding nearer boxes; boundary-adjacent"
+        }
+      ],
+      "note": "Distance by user: boxes kept at 30/50/70 cm, moved sideways between layouts; box-to-distance assignment by visual nearest-to-farthest order (base position on counter), confirm with user",
+      "capture_directory": "data/raw/fresh_multi_smooth_20261116_124401"
+    },
+    {
+      "scene": "fresh_multi_smooth_20261116_124416",
+      "regions": [
+        {
+          "name": "smooth_box_30",
+          "distance_m": 0.3,
+          "bbox": [
+            1000,
+            590,
+            1180,
+            760
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "smooth_box_50",
+          "distance_m": 0.5,
+          "bbox": [
+            1010,
+            800,
+            1200,
+            920
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        },
+        {
+          "name": "smooth_box_70",
+          "distance_m": 0.7,
+          "bbox": [
+            912,
+            800,
+            982,
+            835
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true,
+          "note": "Small visible area next to occluding nearer boxes; boundary-adjacent"
+        }
+      ],
+      "note": "Distance by user: boxes kept at 30/50/70 cm, moved sideways between layouts; box-to-distance assignment by visual nearest-to-farthest order (base position on counter), confirm with user",
+      "capture_directory": "data/raw/fresh_multi_smooth_20261116_124416"
+    },
+    {
+      "scene": "fresh_single_smooth_20261116_125119",
+      "regions": [
+        {
+          "name": "smooth_box",
+          "distance_m": 0.3,
+          "bbox": [
+            1120,
+            620,
+            1320,
+            860
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "capture_directory": "data/raw/fresh_single_smooth_20261116_125119"
+    },
+    {
+      "scene": "fresh_single_smooth_20261116_124831",
+      "regions": [
+        {
+          "name": "smooth_box",
+          "distance_m": 0.5,
+          "bbox": [
+            920,
+            730,
+            1100,
+            850
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "capture_directory": "data/raw/fresh_single_smooth_20261116_124831"
+    },
+    {
+      "scene": "fresh_single_smooth_20261116_125003",
+      "regions": [
+        {
+          "name": "smooth_box",
+          "distance_m": 0.7,
+          "bbox": [
+            890,
+            655,
+            1080,
+            745
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "capture_directory": "data/raw/fresh_single_smooth_20261116_125003"
+    },
+    {
+      "scene": "fresh_single_textured_20261116_125154",
+      "regions": [
+        {
+          "name": "staples_box",
+          "distance_m": 0.3,
+          "bbox": [
+            1080,
+            600,
+            1290,
+            1050
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "capture_directory": "data/raw/fresh_single_textured_20261116_125154"
+    },
+    {
+      "scene": "fresh_single_textured_20261116_125214",
+      "regions": [
+        {
+          "name": "staples_box",
+          "distance_m": 0.5,
+          "bbox": [
+            965,
+            620,
+            1095,
+            890
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "capture_directory": "data/raw/fresh_single_textured_20261116_125214"
+    },
+    {
+      "scene": "fresh_single_textured_20261116_125232",
+      "regions": [
+        {
+          "name": "staples_box",
+          "distance_m": 0.7,
+          "bbox": [
+            880,
+            660,
+            978,
+            860
+          ],
+          "coordinate_space": "native_rgb_1920x1440",
+          "approximate_uncertainty_m": null,
+          "within_measured_calibration_span": true
+        }
+      ],
+      "capture_directory": "data/raw/fresh_single_textured_20261116_125232"
+    }
+  ]
+}

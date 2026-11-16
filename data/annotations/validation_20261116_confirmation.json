@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-16",
+  "source": "User clarification in conversation: Actually 70 cm",
+  "capture_directory": "data/raw/validation_20261116_113725",
+  "manifest_sha256": "88cca5f1e69ee2fb2168f9531b7be35a8d7985cc436527937afb54135c5ca83b",
+  "original_distance_m": 0.3,
+  "corrected_distance_m": 0.7,
+  "effect": "Corrects a stale distance entry for reporting; original capture manifest and frozen calibration remain unchanged. Retain this capture as an additional observation, not an independently established placement repeat."
+}
