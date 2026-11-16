@@ -21,11 +21,39 @@ struct CaptureView: View {
                 CameraPreview(session: camera.session)
                     .aspectRatio(3.0 / 4.0, contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .overlay {
+                        if settings.capturePurpose != "scene" {
+                            GeometryReader { geometry in
+                                Rectangle().stroke(.yellow, lineWidth: 2)
+                                    .frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.1)
+                                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                            }
+                            .allowsHitTesting(false)
+                        }
+                    }
 
                 Form {
+                    Picker("Capture purpose", selection: $settings.capturePurpose) {
+                        Text("Scene").tag("scene")
+                        Text("Calibration").tag("calibration")
+                        Text("Validation").tag("validation")
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: settings.capturePurpose) { _, purpose in
+                        if purpose != "scene" { settings.steps = 24 }
+                    }
+                    if settings.capturePurpose != "scene" {
+                        TextField("Target distance (cm)", text: $settings.targetDistanceCm)
+                            .keyboardType(.decimalPad)
+                        TextField("Measurement uncertainty (cm)", text: $settings.measurementUncertaintyCm)
+                            .keyboardType(.decimalPad)
+                        Text("Fill the center with one flat textured target. Measure from the rear camera to its face.")
+                            .font(.footnote)
+                    }
+                    Toggle("Capture LiDAR reference", isOn: $settings.useLiDAR)
                     TextField("Scene ID", text: $settings.sceneId)
                         .textInputAutocapitalization(.never)
-                    Stepper("Focus steps: \(settings.steps)", value: $settings.steps, in: 3...24)
+                    Stepper("Focus steps: \(settings.steps)", value: $settings.steps, in: 3...40)
                     LabeledContent("Lens min \(settings.minLensPosition, specifier: "%.2f")") {
                         Slider(value: $settings.minLensPosition, in: 0...1)
                     }
@@ -43,23 +71,31 @@ struct CaptureView: View {
                         Text(capabilityError).font(.footnote).foregroundStyle(.secondary)
                     }
                 }
-                .frame(maxHeight: 260)
+                .disabled(sweep.isCapturing)
+                .frame(maxHeight: 300)
 
                 ProgressView(value: sweep.progress)
                 Text(setupError ?? sweep.status).font(.footnote).foregroundStyle(.secondary)
 
                 Button {
-                    Task { await sweep.runSweep(settings) }
+                    let requestedSettings = settings
+                    Task { await sweep.runSweep(requestedSettings) }
                 } label: {
-                    Label("Capture focus sweep", systemImage: "camera.aperture").frame(maxWidth: .infinity)
+                    Label("Capture \(settings.capturePurpose) sweep", systemImage: "camera.aperture").frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(sweep.isCapturing || setupError != nil || settings.minLensPosition >= settings.maxLensPosition)
+
+                if let folder = sweep.lastCapture {
+                    NavigationLink("Review latest saved capture") { CaptureDetailView(folder: folder) }
+                        .disabled(sweep.isCapturing)
+                }
             }
             .padding()
             .navigationTitle("FocusDepth")
             .toolbar {
                 NavigationLink("Captures") { ResultsView() }
+                    .disabled(sweep.isCapturing)
             }
             .task {
                 do {

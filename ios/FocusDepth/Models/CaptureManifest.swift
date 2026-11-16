@@ -13,6 +13,11 @@ struct CaptureManifest: Codable {
     var geometricDistortionCorrection: Bool
     var frames: [Frame]
     var notes: String
+    var capturePurpose: String? = nil
+    var cameraUniqueId: String? = nil
+    var captureDeviceId: String? = nil
+    var calibrationTargetDistanceM: Double? = nil
+    var measurementUncertaintyM: Double? = nil
 
     struct Frame: Codable {
         var file: String
@@ -23,6 +28,8 @@ struct CaptureManifest: Codable {
         var timestampMs: Int
         var exposureDurationS: Double
         var iso: Float
+        var depthFile: String? = nil
+        var pairMetadataFile: String? = nil
     }
 
     func write(to directory: URL) throws {
@@ -30,6 +37,21 @@ struct CaptureManifest: Codable {
         encoder.keyEncodingStrategy = .convertToSnakeCase
         encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        try encoder.encode(self).write(to: directory.appendingPathComponent("manifest.json"))
+        try encoder.encode(self).write(to: directory.appendingPathComponent("manifest.json"), options: .atomic)
+    }
+
+    static func read(from directory: URL) throws -> CaptureManifest {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(Self.self, from: Data(contentsOf: directory.appendingPathComponent("manifest.json")))
+    }
+
+    var purposeLabel: String {
+        (capturePurpose ?? "scene").capitalized
+    }
+
+    var measurementLabel: String? {
+        calibrationTargetDistanceM.map { String(format: "%.1f cm", $0 * 100) }
     }
 }

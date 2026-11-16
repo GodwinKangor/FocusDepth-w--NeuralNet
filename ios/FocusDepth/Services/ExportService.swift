@@ -16,11 +16,19 @@ enum ExportService {
         return folder
     }
 
-    static func listCaptures() -> [URL] {
+    static func listCaptures(root: URL = capturesRoot) -> [URL] {
         let urls = (try? FileManager.default.contentsOfDirectory(
-            at: capturesRoot, includingPropertiesForKeys: [.creationDateKey], options: [.skipsHiddenFiles]
+            at: root, includingPropertiesForKeys: [.creationDateKey], options: [.skipsHiddenFiles]
         )) ?? []
-        return urls.filter(\.hasDirectoryPath).sorted { $0.lastPathComponent > $1.lastPathComponent }
+        let dated = urls.filter(\.hasDirectoryPath).map { url in
+            (url, (try? CaptureManifest.read(from: url).createdAt)
+                ?? (try? url.resourceValues(forKeys: [.creationDateKey]).creationDate)
+                ?? Date.distantPast)
+        }
+        return dated.sorted {
+            if $0.1 == $1.1 { return $0.0.lastPathComponent > $1.0.lastPathComponent }
+            return $0.1 > $1.1
+        }.map { $0.0 }
     }
 
     /// Zips a capture folder for AirDrop / ShareLink. NSFileCoordinator's `.forUploading`
@@ -29,9 +37,10 @@ enum ExportService {
         var coordinatorError: NSError?
         var result: Result<URL, Error> = .failure(CocoaError(.fileWriteUnknown))
         NSFileCoordinator().coordinate(readingItemAt: folder, options: .forUploading, error: &coordinatorError) { zipURL in
-            let destination = FileManager.default.temporaryDirectory.appendingPathComponent("\(folder.lastPathComponent).zip")
+            let exportDirectory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+            let destination = exportDirectory.appendingPathComponent("\(folder.lastPathComponent).zip")
             result = Result {
-                try? FileManager.default.removeItem(at: destination)
+                try FileManager.default.createDirectory(at: exportDirectory, withIntermediateDirectories: true)
                 try FileManager.default.copyItem(at: zipURL, to: destination)
                 return destination
             }
