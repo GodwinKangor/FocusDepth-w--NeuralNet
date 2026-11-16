@@ -1,0 +1,257 @@
+{
+  "scope": "Exploratory manually placed visible object silhouettes, not dense metric ground truth",
+  "annotation_source": "Native reference RGB frame_012.jpg, inspected without using depth values to position the lines",
+  "coordinate_space": "native_rgb_1920x1440",
+  "estimated_annotation_uncertainty_native_px": 5,
+  "profile_half_width_native_px": 45,
+  "anchor_bands_native_px": [
+    [
+      -40,
+      -25
+    ],
+    [
+      25,
+      40
+    ]
+  ],
+  "min_along_edge_coverage": 0.5,
+  "minimum_step_to_global_p90_p10_ratio": 0.02,
+  "notes": [
+    "Normals point from foreground toward background.",
+    "Lines approximate visible silhouettes; flap shape, blur and reference calibration limit exact boundary placement.",
+    "No boundary precision/recall claim; selected line-probe localization and width only."
+  ],
+  "scenes": [
+    {
+      "scene": "scene-20-40-60",
+      "edges": [
+        {
+          "name": "annies_left",
+          "start": [
+            874,
+            800
+          ],
+          "end": [
+            873,
+            1020
+          ],
+          "background_normal": [
+            -1,
+            0
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        },
+        {
+          "name": "annies_top",
+          "start": [
+            930,
+            753
+          ],
+          "end": [
+            1180,
+            751
+          ],
+          "background_normal": [
+            0,
+            -1
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        },
+        {
+          "name": "universal_top",
+          "start": [
+            1110,
+            851
+          ],
+          "end": [
+            1200,
+            853
+          ],
+          "background_normal": [
+            0,
+            -1
+          ],
+          "annotation_uncertainty_native_px": 12,
+          "primary_silhouette_probe": false,
+          "annotation_note": "Fold/flap edge is ambiguous; retained as qualitative diagnostic, excluded from primary silhouette summary"
+        },
+        {
+          "name": "excedrin_left",
+          "start": [
+            1286,
+            1020
+          ],
+          "end": [
+            1290,
+            1110
+          ],
+          "background_normal": [
+            -1,
+            0
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        }
+      ]
+    },
+    {
+      "scene": "scene-20-40-50-60",
+      "edges": [
+        {
+          "name": "annies_left",
+          "start": [
+            874,
+            800
+          ],
+          "end": [
+            873,
+            1020
+          ],
+          "background_normal": [
+            -1,
+            0
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        },
+        {
+          "name": "annies_top",
+          "start": [
+            930,
+            753
+          ],
+          "end": [
+            1180,
+            751
+          ],
+          "background_normal": [
+            0,
+            -1
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        },
+        {
+          "name": "universal_top",
+          "start": [
+            1110,
+            851
+          ],
+          "end": [
+            1200,
+            853
+          ],
+          "background_normal": [
+            0,
+            -1
+          ],
+          "annotation_uncertainty_native_px": 12,
+          "primary_silhouette_probe": false,
+          "annotation_note": "Fold/flap edge is ambiguous; retained as qualitative diagnostic, excluded from primary silhouette summary"
+        },
+        {
+          "name": "excedrin_left",
+          "start": [
+            1286,
+            1020
+          ],
+          "end": [
+            1290,
+            1110
+          ],
+          "background_normal": [
+            -1,
+            0
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        }
+      ]
+    },
+    {
+      "scene": "scene-15-20-40-50-60",
+      "edges": [
+        {
+          "name": "annies_left",
+          "start": [
+            874,
+            800
+          ],
+          "end": [
+            873,
+            1020
+          ],
+          "background_normal": [
+            -1,
+            0
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        },
+        {
+          "name": "annies_top",
+          "start": [
+            930,
+            753
+          ],
+          "end": [
+            1180,
+            751
+          ],
+          "background_normal": [
+            0,
+            -1
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        },
+        {
+          "name": "universal_top",
+          "start": [
+            1110,
+            851
+          ],
+          "end": [
+            1200,
+            853
+          ],
+          "background_normal": [
+            0,
+            -1
+          ],
+          "annotation_uncertainty_native_px": 12,
+          "primary_silhouette_probe": false,
+          "annotation_note": "Fold/flap edge is ambiguous; retained as qualitative diagnostic, excluded from primary silhouette summary"
+        },
+        {
+          "name": "excedrin_left",
+          "start": [
+            1300,
+            1020
+          ],
+          "end": [
+            1308,
+            1100
+          ],
+          "background_normal": [
+            -1,
+            0
+          ],
+          "annotation_uncertainty_native_px": 5,
+          "primary_silhouette_probe": true,
+          "annotation_note": "Approximate visible outer silhouette"
+        }
+      ]
+    }
+  ]
+}
