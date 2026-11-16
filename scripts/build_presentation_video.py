@@ -115,7 +115,10 @@ def make_figures(out,metrics):
         ax.scatter(actual,predicted,s=90,color='#127d6e',label='Six fresh placements',zorder=3)
         ax.set(xlim=(25,75),ylim=(25,75),xlabel='Recorded front-face distance (cm)',ylabel='Regional focus estimate (cm)',title='Frozen calibration · fresh target placements')
         ax.legend();fig.savefig(out/'validation.png',dpi=170);plt.close(fig)
-        fig,axes=plt.subplots(2,3,figsize=(14,6),layout='constrained')
+        fig=plt.figure(figsize=(14,6),layout='constrained')
+        grid=fig.add_gridspec(2,4,width_ratios=[1,1,1,.06])
+        axes=np.array([[fig.add_subplot(grid[row,col]) for col in range(3)] for row in range(2)])
+        color_axis=fig.add_subplot(grid[:,3])
         for row,(label,name) in enumerate([('Printed target','fresh_single_textured_20261116_125214'),('Napkin-covered target','fresh_single_smooth_20261116_124831')]):
             folder=ROOT/'results/fresh_20261116'/name;rgb=np.array(Image.open(folder/'reference_rgb.png').convert('RGB'))
             focus=np.load(folder/'calibrated_focus_meters.npy');valid=np.isfinite(focus)&(focus>0)
@@ -127,9 +130,9 @@ def make_figures(out,metrics):
             axes[row,1].imshow(np.rot90(show,-1));axes[row,1].set_title(f'Focus support: {100*valid.mean():.1f}%\nUnsupported pixels dimmed',fontsize=13)
             shown=axes[row,2].imshow(np.rot90(neural,-1),vmin=.15,vmax=1.,cmap='viridis',interpolation='nearest')
             coverage=float(np.isfinite(neural).mean());median=float(np.nanmedian(neural))*100
-            axes[row,2].set_title(f'Focus-scaled neural: {median:.1f} cm\n{100*coverage:.0f}% patch coverage',fontsize=13)
+            axes[row,2].set_title(f'Scaled neural: {median:.1f} cm\n{100*coverage:.0f}% patch coverage',fontsize=13)
             for ax in axes[row]:ax.axis('off')
-        fig.colorbar(shown,ax=axes[:,2],shrink=.7,label='Meters · shared display scale')
+        fig.colorbar(shown,cax=color_axis,label='Meters · shared display scale')
         fig.suptitle('Smooth target: little direct focus evidence, but a dense scaled neural prediction',fontsize=15)
         fig.savefig(out/'smooth_support.png',dpi=170);plt.close(fig)
 
