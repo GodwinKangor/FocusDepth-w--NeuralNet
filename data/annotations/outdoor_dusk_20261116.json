@@ -1,0 +1,21 @@
+{
+  "description": "Outdoor dusk captures, 2026-11-16. Exploratory; no tape distances, so no regional scoring. LiDAR is the only reference.",
+  "calibration_frozen": true,
+  "scenes": [
+    {
+      "scene": "outdoor_dusk_20261116_155223",
+      "capture_directory": "data/raw/outdoor_dusk_20261116_155223",
+      "regions": []
+    },
+    {
+      "scene": "outdoor_dusk_20261116_155426",
+      "capture_directory": "data/raw/outdoor_dusk_20261116_155426",
+      "regions": []
+    },
+    {
+      "scene": "outdoor_dusk_20261116_155442",
+      "capture_directory": "data/raw/outdoor_dusk_20261116_155442",
+      "regions": []
+    }
+  ]
+}
